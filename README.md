@@ -41,7 +41,7 @@ And when there will be at least 11 logs of pressure(estimated time is 7 hours) w
 
 <img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/9919d32f-170e-4e7f-a440-f188ddf170b3" width="300"/>
 
-## A timelapse gif
+## A gif of information on display
 
 <img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/2c79f3e3-4539-4ef5-9bf4-03c7af5de424" width="300"/>
 
