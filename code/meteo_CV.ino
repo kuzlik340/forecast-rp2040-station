@@ -3,6 +3,7 @@
 #include <Adafruit_BMP280.h>
 #include <Adafruit_GFX.h>
 #include <Adafruit_SSD1306.h>
+#include <limits.h>
 
 #define SCREEN_WIDTH 128
 #define SCREEN_HEIGHT 64
@@ -14,7 +15,9 @@ Adafruit_BMP280 bmp;
 
 
 unsigned long previous_time = 0; //variable for setting timer for screens
-int i = 0;  //main iterator for loop cycle, mainly created for changing screens
+unsigned long int step_loop = 0; //main iterator for loop cycle, created for logging pressure and temperature
+unsigned long int step_loop_prev = 0;
+int i = 0;  //iterator for loop cycle, mainly created for changing screens
 int previous_iterator = 0;  //variable to save previous 'i' for void loop
 int horizon_offset_for_graphics = 27; //horizon offset by pixels for graphics
 int volume_pressure_graph = 0;  //size of pressures array
@@ -244,6 +247,14 @@ void loop() {
        i = 0;
     }
   }
+  if(step_loop != step_loop_prev){
+    Serial.println(step_loop);
+    //handling overflow
+    if (step_loop >= ULONG_MAX-3) {
+       step_loop = 0;
+    }
+  }
+  step_loop_prev = step_loop;
   previous_iterator = i;
   if (current_time - previous_time >= interval && !showSecondScreen && !showThirdScreen) {
     //first screen with pressure graphic
@@ -259,15 +270,16 @@ void loop() {
     display.print(pressure);
     display.println(" hPa");
     i++;
+    step_loop++;
     show_graph_pressure();
     display.display();
-    if (i % interval_for_pressure == 0) {  //logging pressure in array
+    if (step_loop % interval_for_pressure == 0) {  //logging pressure in array
       log_pressure(pressure);
       if (volume_pressure_graph % 12 == 0 && volume_pressure_graph) {
         flag_for_forecast = 1;
       }
     }
-    if (i % interval_for_temperature == 0) { //logging tempearture in array
+    if (step_loop % interval_for_temperature == 0) { //logging tempearture in array
       log_temperature(temperature);
     }
     if (i == 100) {  //moving to second screen after 5 seconds
@@ -291,6 +303,16 @@ void loop() {
     show_graph_temperature();
     display.display();
     i++;
+    step_loop++;
+    if (step_loop % interval_for_pressure == 0) {  
+      log_pressure(pressure);
+      if (volume_pressure_graph % 12 == 0 && volume_pressure_graph) {
+        flag_for_forecast = 1;
+      }
+    }
+    if (step_loop % interval_for_temperature == 0) {
+      log_temperature(temperature);
+    }
     if (i == 200) { //moving to third screen after 5 seconds
       showSecondScreen = 0;  
       if (flag_for_forecast) {
@@ -299,15 +321,6 @@ void loop() {
       else{
         i = 0;
       }
-    }
-    if (i % interval_for_pressure == 0) {  
-      log_pressure(pressure);
-      if (volume_pressure_graph % 12 == 0 && volume_pressure_graph) {
-        flag_for_forecast = 1;
-      }
-    }
-    if (i % interval_for_temperature == 0) {
-      log_temperature(temperature);
     }
   }
   if (current_time - previous_time >= interval && showThirdScreen && flag_for_forecast) {
@@ -326,17 +339,18 @@ void loop() {
     show_forecast();
     display.display();
     i++;
+    step_loop++;
     if (i == 300) {
       showThirdScreen = 0;
       showSecondScreen = 0;
     }
-    if (i % interval_for_pressure == 0) {  
+    if (step_loop % interval_for_pressure == 0) {  
       log_pressure(pressure);
       if (volume_pressure_graph % 12 == 0 && volume_pressure_graph) {
         flag_for_forecast = 1;
       }
     }
-    if (i % interval_for_temperature == 0) {
+    if (step_loop % interval_for_temperature == 0) {
       log_temperature(temperature);
     }
   }
