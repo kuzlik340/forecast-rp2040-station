@@ -30,7 +30,7 @@ The forecast-rp2040-station offers the following features:
 ## Screens
 So the first two screens will show an estimated time for data to log. The dots displayed on graphics are updated every 15 minutes for temperature and every 30 minutes for pressure. So, to see the first dot we have to wait some time.
 
-<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/35628b00-f1be-4b99-8560-c2ffd42fa540" width="300"/>
+<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/35628b00-f1be-4b99-8560-c2ffd42fa540" width="600"/>
 
 Than when all the data will be uploaded we will see a screen with a pressure graphic and a temperature graphic.
 
@@ -39,11 +39,11 @@ Than when all the data will be uploaded we will see a screen with a pressure gra
 
 And when there will be at least 11 logs of pressure(estimated time is 7 hours) we will see the forecast. Then it will be displayed permanently. We will wait for the forecast only when starting microcontroller.
 
-<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/9919d32f-170e-4e7f-a440-f188ddf170b3" width="300"/>
+<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/9919d32f-170e-4e7f-a440-f188ddf170b3" width="600"/>
 
 ## A gif of information on display
 
-<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/2c79f3e3-4539-4ef5-9bf4-03c7af5de424" width="300"/>
+<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/2c79f3e3-4539-4ef5-9bf4-03c7af5de424" width="600"/>
 
 
 
