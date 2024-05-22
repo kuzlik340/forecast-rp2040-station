@@ -15,12 +15,9 @@ The forecast-rp2040-station offers the following features:
 - **Pressure Measurement**: Measures atmospheric pressure. Also doing a graphic out of it.
 - **Forecast feature**: The main feature of this station is forecast based on the atmospheric pressure.
 
-
-<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/ede9e482-9626-4ea4-907a-657552a753c1" alt="2024-05-19 02 01 09" width="300"/>
-
 ## Wiring
 
-<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/ede9e482-9626-4ea4-907a-657552a753c1" alt="2024-05-19 02 01 09" width="300"/>   
+<img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/ede9e482-9626-4ea4-907a-657552a753c1" alt="2024-05-19 02 01 09" width="450"/>   
 
 ## Last part
 
