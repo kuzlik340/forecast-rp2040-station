@@ -1,6 +1,6 @@
 <img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/a7c2bccd-131b-4acd-8dc7-73c232ca1948" alt="DALLE2024-05-2201 57 33" width="300"/>
 
-# forecast-rp2040-station
+# RP2040 meteostation with forecast
 
 ## Introduction
 
@@ -23,7 +23,7 @@ The forecast-rp2040-station offers the following features:
 1. Download the code from this repository and open it in arduino IDE
 2. Download all adafruit libraries that have to be in this project
 3. Correct the address of display to 0x3C in Adafruit_SSD1306.h
-4. Correct the address of pressure sensor to 0x76 in Adafruit_BMP280.h
+4. Correct the address of the pressure sensor to 0x76 in Adafruit_BMP280.h
 5. Check all wiring!
 6. Run the code on your microcontroller :)
 
@@ -32,7 +32,7 @@ So the first two screens will show an estimated time for data to log. The dots d
 
 <img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/35628b00-f1be-4b99-8560-c2ffd42fa540" width="600"/>
 
-Than when all the data will be uploaded we will see a screen with a pressure graphic and a temperature graphic.
+Than when all the data is uploaded we will see a screen with a pressure graphic and a temperature graphic.
 
 <img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/d940977c-94a4-410f-bf68-987eaf4e7262" width="300"/>
 <img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/0082005e-2df5-4da8-a467-f96ff906f0e7" width="300"/>
