@@ -19,7 +19,7 @@ The forecast-rp2040-station offers the following features:
 
 <img src="https://github.com/kuzlik340/forecast-rp2040-station/assets/145336491/ede9e482-9626-4ea4-907a-657552a753c1" alt="2024-05-19 02 01 09" width="450"/>   
 
-## How to rune code
+## How to run code
 1. Download the code from this repository and open it in arduino IDE
 2. Download all adafruit libraries that have to be in this project
 3. Correct the address of display to 0x3C in Adafruit_SSD1306.h
