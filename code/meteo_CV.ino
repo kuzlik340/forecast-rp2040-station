@@ -200,6 +200,7 @@ void show_graph_temperature() {  //function to show graphic of temperatures
   display.setCursor(4, 23);
   display.print("40");   //a highest
   horizon_offset_for_graphics = 27; 
+  previous = 0;
 }
 
 
@@ -244,6 +245,7 @@ void show_graph_pressure() { //function to show graphic of pressures
   display.setCursor(0, 23);
   display.print("1015"); //a highest
   horizon_offset_for_graphics = 27;
+  previous = 0;
 }
 
 
